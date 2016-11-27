@@ -29,7 +29,12 @@ SECRET_KEY = '(**ao)goj9%y=bzbk3(ky_f(q&9i14gyqo_@avzy4_nd3_q(pb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'present-me.com.ua',
+    'www.present-me.com.ua',
+]
 
 
 """
