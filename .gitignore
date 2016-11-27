@@ -7,6 +7,7 @@ cache/ee/
 main/__pycache__/
 main/migrations/__pycache__/
 myoscarfork/__pycache__/
-myoscarfork/promotions/
 present-me/__pycache__/
-templates/
+media/
+present-me/static/
+static/
