@@ -15,6 +15,8 @@ from oscar import get_core_apps
 from oscar.defaults import *
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = BASE_DIR
@@ -184,6 +186,50 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../media')
 STATIC_ROOT = os.path.join(PROJECT_ROOT, '../static')
+
+SERVER_EMAIL = 'admin@example.com'
+#Настройки магазина
+OSCAR_SHOP_NAME = '"Present Me"'
+OSCAR_SHOP_TAGLINE = u'лучшее место для покупок в сети'
+OSCAR_DEFAULT_CURRENCY = 'RUR'
+OSCAR_CURRENCY_LOCALE = 'ru_RU'
+"""
+OSCAR_REQUIRED_ADDRESS_FIELDS определяет обязательные поля при оформлении
+заказа.
+С точки зрения покупателя, меня бесит необходимость заполнять поля,
+которые не нужны. Зачем, например, обязывать заполнять адрес доставки,
+если я хочу забрать покупку самовывозом?
+Поэтому оставляйте только действительно необходимое.
+"""
+OSCAR_REQUIRED_ADDRESS_FIELDS = (
+    'first_name',
+#    'last_name',
+#    'line1',
+#    'line4',
+#    'postcode', #  TODO: все равно требует ввести индекс, хоть и не помечает, как обязательное
+#    'country',
+    )
+OSCAR_PRODUCTS_PER_PAGE = 20  # количество товаров на странице
+OSCAR_ALLOW_ANON_CHECKOUT = False  # разрешить покупки без регистрации
+OSCAR_ALLOW_ANON_REVIEWS = True  # разрешить анонимные отзывы о товаре
+OSCAR_MODERATE_REVIEWS = False  # проверка отзывов перед публикацией на сайте
+"""
+Следующий параметр разрешает немедленную отсылку уведомлений о поступившем
+товаре покупателям, которые просили их уведомить. Может создавать значительную
+нагрузку на сервер при больших объемах рассылки. не рекомендуется использовать.
+Подробнее смотрите в документации.
+"""
+OSCAR_EAGER_ALERTS = True
+"""
+Следующий параметр определяет, надо ли отсылать покупателям уведомление о
+регистрации в магазине. Стоит отметить, что подтверждения регистрации не
+требуется, так что отсылается только информационное уведомление.
+"""
+OSCAR_SEND_REGISTRATION_EMAIL = True
+OSCAR_FROM_EMAIL = 'noreply@present-me.com.ua'
+OSCAR_RECENTLY_VIEWED_PRODUCTS = 20  # количество запоминаемых недавно просмотренных товаров
+OSCAR_MAX_BASKET_QUANTITY_THRESHOLD = None  # количество товаров, которые можно добавить в корзину
+
 
 """
 Настройка статусов заказов.
