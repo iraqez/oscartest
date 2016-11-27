@@ -174,6 +174,14 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+#         'URL': 'http://127.0.0.1:8983/solr',
+#         'INCLUDE_SPELLING': True,
+#     },
+# }
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -191,7 +199,7 @@ SERVER_EMAIL = 'admin@example.com'
 #Настройки магазина
 OSCAR_SHOP_NAME = '"Present Me"'
 OSCAR_SHOP_TAGLINE = u'лучшее место для покупок в сети'
-OSCAR_DEFAULT_CURRENCY = 'RUR'
+OSCAR_DEFAULT_CURRENCY = 'UAH'
 OSCAR_CURRENCY_LOCALE = 'ru_RU'
 """
 OSCAR_REQUIRED_ADDRESS_FIELDS определяет обязательные поля при оформлении
@@ -231,15 +239,15 @@ OSCAR_RECENTLY_VIEWED_PRODUCTS = 20  # количество запоминаем
 OSCAR_MAX_BASKET_QUANTITY_THRESHOLD = None  # количество товаров, которые можно добавить в корзину
 
 
-"""
-Настройка статусов заказов.
-Для каждого статуса можно указать статусы, на которые можно изменить текущий.
-"""
-OSCAR_INITIAL_ORDER_STATUS = u'Новый'
-OSCAR_INITIAL_LINE_STATUS = u'Новый'
-OSCAR_LINE_STATUS_PIPELINE = {
-    u'Новый': (u'Подготовлен', u'Отменен',),
-    u'Подготовлен': (u'Отгружен', u'Отменен',),
-    u'Отгружен': (),
-    u'Отменен': (),
-}
+# """
+# Настройка статусов заказов.
+# Для каждого статуса можно указать статусы, на которые можно изменить текущий.
+# """
+# OSCAR_INITIAL_ORDER_STATUS = u'Новый'
+# OSCAR_INITIAL_LINE_STATUS = u'Новый'
+# OSCAR_LINE_STATUS_PIPELINE = {
+#     u'Новый': (u'Подготовлен', u'Отменен',),
+#     u'Подготовлен': (u'Отгружен', u'Отменен',),
+#     u'Отгружен': (),
+#     u'Отменен': (),
+# }

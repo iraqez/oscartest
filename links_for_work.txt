@@ -1,0 +1,12 @@
+#install on server
+http://ivansimeyko.com/article/4/ #необходимо разобратся, про путь uwsgi
+
+#поиск
+https://habrahabr.ru/post/225999/
+http://djbook.ru/examples/68/
+
+#социальные сети
+
+#платежные системы
+
+#доставка
