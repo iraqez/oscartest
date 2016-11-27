@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     'main',
-] + get_core_apps()
+] + get_core_apps(['myoscarfork.promotions'])
 
 SITE_ID = 1
 

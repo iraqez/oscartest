@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+cache/46/
+cache/78/
+cache/ba/
+cache/ee/
+main/__pycache__/
+main/migrations/__pycache__/
+myoscarfork/__pycache__/
+myoscarfork/promotions/
+oscartest/__pycache__/
+templates/
