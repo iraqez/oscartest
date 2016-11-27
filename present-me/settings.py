@@ -76,7 +76,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-ROOT_URLCONF = 'oscartest.urls'
+ROOT_URLCONF = 'present-me.urls'
 
 TEMPLATES = [
     {
@@ -104,7 +104,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'oscartest.wsgi.application'
+WSGI_APPLICATION = 'present-me.wsgi.application'
 
 
 # Database
