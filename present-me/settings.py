@@ -130,9 +130,9 @@ WSGI_APPLICATION = 'present-me.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'agroholding20121',
-    'USER': 'postgres1',
-    'PASSWORD': 'workfree1',
+    'NAME': 'present-me',
+    'USER': 'postgres',
+    'PASSWORD': 'workfree',
     'HOST': 'localhost', # Set to empty string for localhost.
     'PORT': '5432', # Set to empty string for default.
     }
