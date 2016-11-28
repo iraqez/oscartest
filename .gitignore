@@ -5,6 +5,7 @@ cache/78/
 cache/ba/
 cache/ee/
 main/__pycache__/
-main/migrations/__pycache__/
+main/migrations
 myoscarfork/__pycache__/
 present-me/__pycache__/
+myoscarfork/promotions/migrations
