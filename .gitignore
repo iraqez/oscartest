@@ -10,3 +10,7 @@ myoscarfork/__pycache__/
 present-me/__pycache__/
 myoscarfork/promotions/migrations
 present-me/local_settings.py
+media/cache/
+media/images/
+myoscarfork/promotions/__pycache__/
+templates/
