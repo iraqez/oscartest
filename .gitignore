@@ -9,3 +9,4 @@ main/migrations
 myoscarfork/__pycache__/
 present-me/__pycache__/
 myoscarfork/promotions/migrations
+present-me/local_settings.py
