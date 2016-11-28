@@ -1,6 +1,4 @@
-from .settings import DATABASES, ALLOWED_HOSTS
-
-
+from .settings import *
 
 DATABASES = {
     'default': {
