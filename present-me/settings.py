@@ -39,6 +39,8 @@ ALLOWED_HOSTS = [
     'localhost',
     'present-me.com.ua',
     'www.present-me.com.ua',
+    'dev.present-me.com.ua',
+    'www.dev.present-me.com.ua',
 ]
 
 
