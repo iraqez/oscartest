@@ -13,3 +13,5 @@ apps/promotions/__pycache__/
 templates/
 __pycache__/
 !/present-me/dev_settings.py
+!/apps/promotions/templates/
+myoscarfork/
