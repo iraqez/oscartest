@@ -66,7 +66,10 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     'main',
-] + get_core_apps(['myoscarfork.promotions'])
+] + get_core_apps([
+    'apps.promotions',
+    'apps.shipping',
+                   ])
 
 SITE_ID = 1
 
