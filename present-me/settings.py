@@ -70,9 +70,13 @@ INSTALLED_APPS = [
     'apps.promotions',
     'apps.shipping',
                    ])
-
-SITE_ID = 1
 #
+SITE_ID = 1
+<<<<<<< HEAD
+#
+=======
+#1
+>>>>>>> b61ee30ceec25e4cd1af3e59ec62aa6bdfbc47c1
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
