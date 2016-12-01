@@ -12,3 +12,4 @@ media/images/
 apps/promotions/__pycache__/
 templates/
 __pycache__/
+!/present-me/dev_settings.py
