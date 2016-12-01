@@ -77,9 +77,9 @@ INSTALLED_APPS = [
     'apps.user',
     'apps.dashboard.catalogue',
                    ])
-#
-SITE_ID = 1
 
+SITE_ID = 1
+#
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
