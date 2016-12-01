@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os
+
 import sys
 from osenv import osenv
 
