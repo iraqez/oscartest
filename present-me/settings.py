@@ -78,7 +78,7 @@ INSTALLED_APPS = [
     'apps.dashboard.catalogue',
     'apps.catalogue'
                    ])
-#
+
 SITE_ID = 1
 #
 MIDDLEWARE_CLASSES = [
