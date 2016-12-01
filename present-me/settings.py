@@ -72,7 +72,7 @@ INSTALLED_APPS = [
     'apps.promotions',
     'apps.shipping',
                    ])
-
+#
 SITE_ID = 1
 
 MIDDLEWARE_CLASSES = [
