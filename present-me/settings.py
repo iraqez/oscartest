@@ -152,7 +152,7 @@ DATABASES = {
 #-----------------VK-----------------------
 SOCIAL_AUTH_VK_OAUTH2_KEY = '5758321'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = '1fTKh7Gmifg6ou3ZYPCx'
-SOCIAL_AUTH_LOGIN_URL = 'http://dev.present-me.com.ua/accounts/profile/'  # тут ваш url для калбека
+#SOCIAL_AUTH_LOGIN_URL = 'http://dev.present-me.com.ua/accounts/profile/'  # тут ваш url для калбека
 SOCIAL_AUTH_USER_MODEL = 'auth.User'  # ваша кастомная модель пользователя
 SOCIAL_AUTH_UID_LENGTH = 223
 SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
