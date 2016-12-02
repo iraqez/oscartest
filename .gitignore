@@ -16,4 +16,3 @@ __pycache__/
 !/apps/promotions/templates/
 myoscarfork/
 !/templates/
-/db.sqlite3
