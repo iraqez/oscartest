@@ -22,4 +22,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'', include(application.urls)),
+
+    # Social auth
+    url('', include('social.apps.django_app.urls', namespace='social')),
+
+    # #social-auth
+    # url(r'^app/', include('social.apps.django_app.urls', namespace='social')),
+    # url(r'^app/oauth2login$', 'my.social.oauth2login_view'),  # наша вьюха после авторизации
 ]
