@@ -64,6 +64,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'compressor',
     'widget_tweaks',
+    #social-auth
+    'social.apps.django_app.default',
 
     'main',
 ] + get_core_apps([
@@ -87,6 +89,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 AUTHENTICATION_BACKENDS = (
+    'social.backends.vk.VKOAuth2',  # тут можете перечислять нужные бекенды
+    #  бекенды и настройки к ним лежат на https://python-social-auth.readthedocs.org/en/latest/backends/index.html
     'oscar.apps.customer.auth_backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -108,7 +112,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.core.context_processors.i18n',
                 'django.contrib.messages.context_processors.messages',
-
+                #social_app
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
+                #oscar
                 'oscar.apps.search.context_processors.search_form',
                 'oscar.apps.promotions.context_processors.promotions',
                 'oscar.apps.checkout.context_processors.checkout',
@@ -125,12 +132,6 @@ WSGI_APPLICATION = 'present-me.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 DATABASES = {
     'default': {
@@ -143,6 +144,33 @@ DATABASES = {
     }
 }
 
+"""
+Авторизация через социальные сети с помощью модуля python-social-auth
+тестить буду на ВК, поскольку под него собираюсь делать еще и выгрузку
+товаров на "вк магазин".
+"""
+#-----------------VK-----------------------
+SOCIAL_AUTH_VK_OAUTH2_KEY = '5758321'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '1fTKh7Gmifg6ou3ZYPCx'
+#SOCIAL_AUTH_LOGIN_URL = '/app/oauth2login'  # тут ваш url для калбека
+SOCIAL_AUTH_USER_MODEL = 'auth.User'  # ваша кастомная модель пользователя
+SOCIAL_AUTH_UID_LENGTH = 223
+SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
+SOCIAL_AUTH_STORAGE = 'social.apps.django_app.default.models.DjangoStorage'
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'my.social.save_profile',  # <--- тут наш метод, работающий с социальной авторизацией
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+)
+
+#-------------------------------------------
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
