@@ -14,6 +14,7 @@ import os
 from oscar import get_core_apps
 from oscar.defaults import *
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
+#from oscar.apps.customer.abstract_models import AUTH_USER_MODEL
 
 
 
@@ -66,11 +67,15 @@ INSTALLED_APPS = [
     'widget_tweaks',
     #social-auth
     'social.apps.django_app.default',
+    #model-translation
+    'modeltranslation',
 
     'main',
 ] + get_core_apps([
     'apps.promotions',
     'apps.shipping',
+    'apps.user',
+    'apps.dashboard.catalogue',
                    ])
 
 SITE_ID = 1
@@ -84,6 +89,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 
     'oscar.apps.basket.middleware.BasketMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
@@ -144,6 +150,7 @@ DATABASES = {
     }
 }
 
+#AUTH_USER_MODEL = "user.User"
 """
 Авторизация через социальные сети с помощью модуля python-social-auth
 тестить буду на ВК, поскольку под него собираюсь делать еще и выгрузку
@@ -152,11 +159,19 @@ DATABASES = {
 #-----------------VK-----------------------
 SOCIAL_AUTH_VK_OAUTH2_KEY = '5758321'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = '1fTKh7Gmifg6ou3ZYPCx'
-#SOCIAL_AUTH_LOGIN_URL = '/app/oauth2login'  # тут ваш url для калбека
-SOCIAL_AUTH_USER_MODEL = 'auth.User'  # ваша кастомная модель пользователя
+SOCIAL_AUTH_LOGIN_URL = 'accounts/profile/'  # тут ваш url для калбека
+#SOCIAL_AUTH_USER_MODEL = 'User'  # ваша кастомная модель пользователя
 SOCIAL_AUTH_UID_LENGTH = 223
 SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
 SOCIAL_AUTH_STORAGE = 'social.apps.django_app.default.models.DjangoStorage'
+
+SOCIAL_AUTH_VK_OAUTH2_API_VERSION = 5.6
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = [
+  'notify',
+  'friends',
+  'email',
+]
+
 
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',
@@ -164,7 +179,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.auth_allowed',
     'social.pipeline.social_auth.social_user',
     'social.pipeline.user.get_username',
-    'my.social.save_profile',  # <--- тут наш метод, работающий с социальной авторизацией
+ #   'my.social.save_profile',  # <--- тут наш метод, работающий с социальной авторизацией
     'social.pipeline.social_auth.associate_user',
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
@@ -206,11 +221,20 @@ USE_TZ = True
 Если указать единственный язык - выпадающий список не будет отображаться вообще.
 Если указать несколько языков, то список будет содержать только их.
 """
+LOCALE_PATHS = [
+     os.path.join(PROJECT_ROOT, '../locale'),
+]
+
+gettext_noop = lambda s: s
+
 LANGUAGES = (
-    ('ru', 'Russian'),
-    ('uk', 'Ukrainian'),
+    ('ru', gettext_noop('Russian')),
+    ('uk', gettext_noop('Ukrainian')),
+    ('en', gettext_noop('English')),
+
 )
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'uk'
+MODELTRANSLATION_LANGUAGES = ('uk', 'ru')
 
 HAYSTACK_CONNECTIONS = {
     'default': {
@@ -242,9 +266,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, '../static')
 SERVER_EMAIL = 'admin@example.com'
 #Настройки магазина
 OSCAR_SHOP_NAME = '"Present Me"'
-OSCAR_SHOP_TAGLINE = u'лучшее место для покупок в сети'
+OSCAR_SHOP_TAGLINE = u''
 OSCAR_DEFAULT_CURRENCY = 'UAH'
-OSCAR_CURRENCY_LOCALE = 'ru_RU'
+OSCAR_CURRENCY_LOCALE = 'uk'
 """
 OSCAR_REQUIRED_ADDRESS_FIELDS определяет обязательные поля при оформлении
 заказа.
@@ -257,14 +281,14 @@ OSCAR_REQUIRED_ADDRESS_FIELDS = (
     'first_name',
 #    'last_name',
 #    'line1',
-#    'line4',
+    'line4',
 #    'postcode', #  TODO: все равно требует ввести индекс, хоть и не помечает, как обязательное
 #    'country',
     )
 OSCAR_PRODUCTS_PER_PAGE = 20  # количество товаров на странице
 OSCAR_ALLOW_ANON_CHECKOUT = False  # разрешить покупки без регистрации
 OSCAR_ALLOW_ANON_REVIEWS = True  # разрешить анонимные отзывы о товаре
-OSCAR_MODERATE_REVIEWS = False  # проверка отзывов перед публикацией на сайте
+OSCAR_MODERATE_REVIEWS = True  # проверка отзывов перед публикацией на сайте
 """
 Следующий параметр разрешает немедленную отсылку уведомлений о поступившем
 товаре покупателям, которые просили их уведомить. Может создавать значительную
