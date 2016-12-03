@@ -29,7 +29,7 @@ msgstr "Пан"
 
 #: apps/address/abstract_models.py:27
 msgid "Miss"
-msgstr "Міс"
+msgstr "Шановна"
 
 #: apps/address/abstract_models.py:28
 msgid "Mrs"
@@ -37,16 +37,16 @@ msgstr "Пані"
 
 #: apps/address/abstract_models.py:29
 msgid "Ms"
-msgstr "Міс"
+msgstr "Шановний"
 
 #: apps/address/abstract_models.py:30
 msgid "Dr"
-msgstr "Доктор"
+msgstr "Користувач"
 
 #: apps/address/abstract_models.py:219
 msgctxt "Treatment Pronouns for the customer"
 msgid "Title"
-msgstr "Назва"
+msgstr "Звернення"
 
 #: apps/address/abstract_models.py:221 apps/customer/abstract_models.py:59
 #: templates/oscar/dashboard/partners/partner_manage.html:42
@@ -64,15 +64,15 @@ msgstr "Прізвище"
 
 #: apps/address/abstract_models.py:226
 msgid "First line of address"
-msgstr "Перший рядок адреси"
+msgstr "Квартира"
 
 #: apps/address/abstract_models.py:228
 msgid "Second line of address"
-msgstr "Другий рядок адреси"
+msgstr "Будинок"
 
 #: apps/address/abstract_models.py:230
 msgid "Third line of address"
-msgstr "Третій рядок адреси"
+msgstr "Вулиця"
 
 #: apps/address/abstract_models.py:231
 msgid "City"
@@ -80,7 +80,7 @@ msgstr "Місто"
 
 #: apps/address/abstract_models.py:232
 msgid "State/County"
-msgstr "Штат/Провінція"
+msgstr "Район/Область"
 
 #: apps/address/abstract_models.py:234
 msgid "Post/Zip-code"
