@@ -242,9 +242,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, '../static')
 SERVER_EMAIL = 'admin@example.com'
 #Настройки магазина
 OSCAR_SHOP_NAME = '"Present Me"'
-OSCAR_SHOP_TAGLINE = u'лучшее место для покупок в сети'
+OSCAR_SHOP_TAGLINE = u''
 OSCAR_DEFAULT_CURRENCY = 'UAH'
-OSCAR_CURRENCY_LOCALE = 'ru_RU'
+OSCAR_CURRENCY_LOCALE = 'uk'
 """
 OSCAR_REQUIRED_ADDRESS_FIELDS определяет обязательные поля при оформлении
 заказа.
@@ -257,14 +257,14 @@ OSCAR_REQUIRED_ADDRESS_FIELDS = (
     'first_name',
 #    'last_name',
 #    'line1',
-#    'line4',
+    'line4',
 #    'postcode', #  TODO: все равно требует ввести индекс, хоть и не помечает, как обязательное
 #    'country',
     )
 OSCAR_PRODUCTS_PER_PAGE = 20  # количество товаров на странице
 OSCAR_ALLOW_ANON_CHECKOUT = False  # разрешить покупки без регистрации
 OSCAR_ALLOW_ANON_REVIEWS = True  # разрешить анонимные отзывы о товаре
-OSCAR_MODERATE_REVIEWS = False  # проверка отзывов перед публикацией на сайте
+OSCAR_MODERATE_REVIEWS = True  # проверка отзывов перед публикацией на сайте
 """
 Следующий параметр разрешает немедленную отсылку уведомлений о поступившем
 товаре покупателям, которые просили их уведомить. Может создавать значительную
