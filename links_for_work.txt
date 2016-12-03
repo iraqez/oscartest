@@ -1,6 +1,10 @@
 #install on server
 http://ivansimeyko.com/article/4/ #необходимо разобратся, про путь uwsgi
 
+#регистрация и авторизация
+https://pythoness.pp.ua/catalog/article/django-oauth2/
+http://pyha.ru/forum/topic/9315
+
 #поиск
 https://habrahabr.ru/post/225999/
 http://djbook.ru/examples/68/
@@ -10,3 +14,7 @@ http://djbook.ru/examples/68/
 #платежные системы
 
 #доставка
+
+#мультиязычность
+http://django-modeltranslation.readthedocs.io/en/latest/index.html
+https://habrahabr.ru/post/128273/
