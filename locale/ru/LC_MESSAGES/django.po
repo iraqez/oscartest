@@ -20,28 +20,28 @@ msgstr ""
 
 #: apps/address/abstract_models.py:26
 msgid "Mr"
-msgstr "Товарищ"
+msgstr "Уважаемый"
 
 #: apps/address/abstract_models.py:27
 msgid "Miss"
-msgstr "Мисс"
+msgstr "Уважаемая"
 
 #: apps/address/abstract_models.py:28
 msgid "Mrs"
-msgstr "Мисс"
+msgstr "Дорогая"
 
 #: apps/address/abstract_models.py:29
 msgid "Ms"
-msgstr "Госпожа"
+msgstr "Дорогой"
 
 #: apps/address/abstract_models.py:30
 msgid "Dr"
-msgstr "Царь"
+msgstr "Пользователь"
 
 #: apps/address/abstract_models.py:219
 msgctxt "Treatment Pronouns for the customer"
 msgid "Title"
-msgstr "Заголовок"
+msgstr "Обращение"
 
 #: apps/address/abstract_models.py:221 apps/customer/abstract_models.py:59
 #: templates/oscar/dashboard/partners/partner_manage.html:42
@@ -59,15 +59,15 @@ msgstr "Фамилия"
 
 #: apps/address/abstract_models.py:226
 msgid "First line of address"
-msgstr "Первый адрес"
+msgstr "Квартира"
 
 #: apps/address/abstract_models.py:228
 msgid "Second line of address"
-msgstr "Второй адрес"
+msgstr "Дом"
 
 #: apps/address/abstract_models.py:230
 msgid "Third line of address"
-msgstr "Третий адрес"
+msgstr "Улица"
 
 #: apps/address/abstract_models.py:231
 msgid "City"
@@ -75,7 +75,7 @@ msgstr "Город"
 
 #: apps/address/abstract_models.py:232
 msgid "State/County"
-msgstr "Регион"
+msgstr "Район/Область"
 
 #: apps/address/abstract_models.py:234
 msgid "Post/Zip-code"
@@ -7890,12 +7890,12 @@ msgstr ""
 #: templates/oscar/dashboard/partials/form_fields.html:5
 #: templates/oscar/partials/form_fields.html:5
 msgid "Oops! We found some errors"
-msgstr ""
+msgstr "Кажется, мы нашли некоторые ошибки"
 
 #: templates/oscar/dashboard/partials/form_fields.html:5
 #: templates/oscar/partials/form_fields.html:5
 msgid "please check the error messages below and try again"
-msgstr ""
+msgstr "просмотрите сообщение про ошибку, и попробуйте еще раз"
 
 #: templates/oscar/dashboard/partials/pagination.html:8
 #: templates/oscar/partials/ellipses_pagination.html:9
@@ -8975,3 +8975,4 @@ msgstr ""
 #: views/generic.py:207
 msgid "This is not a valid local or international phone format."
 msgstr ""
+
