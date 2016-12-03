@@ -5034,7 +5034,7 @@ msgstr "Оповіщення про зниження запасу на скла�
 
 #: defaults.py:132
 msgid "Fulfilment"
-msgstr "Виповнення"
+msgstr "Торгівля"
 
 #: defaults.py:140 templates/oscar/dashboard/orders/statistics.html:19
 msgid "Statistics"
