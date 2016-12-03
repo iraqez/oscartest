@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     #social-auth
     'social.apps.django_app.default',
     #model-translation
-    'modeltranslation',
+  #  'modeltranslation',
 
     'main',
 ] + get_core_apps([
@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     'apps.shipping',
     'apps.user',
     'apps.dashboard.catalogue',
+    'apps.catalogue'
                    ])
 
 SITE_ID = 1
@@ -235,6 +236,8 @@ LANGUAGES = (
 )
 LANGUAGE_CODE = 'uk'
 MODELTRANSLATION_LANGUAGES = ('uk', 'ru')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_TRANSLATION_REGISTRY = 'translations'
 
 HAYSTACK_CONNECTIONS = {
     'default': {
