@@ -3,7 +3,7 @@ from modeltranslation.admin import TranslationAdmin
 from .models import Category
 from oscar.apps.catalogue.admin import CategoryAdmin as CoreCategoryAdmin
 from oscar.apps.catalogue.admin import *  # noqa
-#
+
 
 class CategoryAdmin(CoreCategoryAdmin, TranslationAdmin):
 
