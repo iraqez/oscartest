@@ -5,4 +5,6 @@ Category = get_model('catalogue', 'Category')
 
 CategoryForm = movenodeform_factory(
     Category,
-    fields=['name', 'description', 'image', 'metatag_keyworlds',])
+    fields=[
+        'name', 'description', 'image', 'metatag_keyworlds',
+    ])
