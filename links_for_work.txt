@@ -14,3 +14,7 @@ http://djbook.ru/examples/68/
 #платежные системы
 
 #доставка
+
+#мультиязычность
+http://django-modeltranslation.readthedocs.io/en/latest/index.html
+https://habrahabr.ru/post/128273/

@@ -67,12 +67,15 @@ INSTALLED_APPS = [
     'widget_tweaks',
     #social-auth
     'social.apps.django_app.default',
+    #model-translation
+    'modeltranslation',
 
     'main',
 ] + get_core_apps([
     'apps.promotions',
     'apps.shipping',
     'apps.user',
+    'apps.dashboard.catalogue',
                    ])
 
 SITE_ID = 1
@@ -227,8 +230,11 @@ gettext_noop = lambda s: s
 LANGUAGES = (
     ('ru', gettext_noop('Russian')),
     ('uk', gettext_noop('Ukrainian')),
+    ('en', gettext_noop('English')),
+
 )
 LANGUAGE_CODE = 'uk'
+MODELTRANSLATION_LANGUAGES = ('uk', 'ru')
 
 HAYSTACK_CONNECTIONS = {
     'default': {
