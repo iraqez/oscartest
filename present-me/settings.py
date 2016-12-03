@@ -76,7 +76,6 @@ INSTALLED_APPS = [
     'apps.shipping',
     'apps.user',
     'apps.dashboard.catalogue',
-    'apps.catalogue'
                    ])
 
 SITE_ID = 1
@@ -236,7 +235,6 @@ LANGUAGES = (
 )
 LANGUAGE_CODE = 'uk'
 MODELTRANSLATION_LANGUAGES = ('uk', 'ru')
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'uk'
 
 HAYSTACK_CONNECTIONS = {
     'default': {
