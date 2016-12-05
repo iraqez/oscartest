@@ -99,4 +99,3 @@ admin.site.register(ProductClassNew, ProductClassAdminI18n)
 admin.site.register(CategoryNew, CategoryAdminI18n)
 from oscar.apps.catalogue.admin import *  # noqa
 
-#
