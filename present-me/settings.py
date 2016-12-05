@@ -80,7 +80,7 @@ INSTALLED_APPS = [
                    ])
 
 SITE_ID = 1
-#
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -236,14 +236,7 @@ LANGUAGES = (
 )
 LANGUAGE_CODE = 'uk'
 MODELTRANSLATION_LANGUAGES = ('uk', 'ru')
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'uk'
->>>>>>> 9ec7991faf83d44bbde70411ae250c47bf8af4b3
-=======
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'uk'
->>>>>>> d6ec04109399b5f2542bf3f10e0e4f922ee5459e
 
 HAYSTACK_CONNECTIONS = {
     'default': {
