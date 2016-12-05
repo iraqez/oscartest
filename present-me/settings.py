@@ -235,6 +235,10 @@ LANGUAGES = (
 )
 LANGUAGE_CODE = 'uk'
 MODELTRANSLATION_LANGUAGES = ('uk', 'ru')
+<<<<<<< HEAD
+=======
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uk'
+>>>>>>> 9ec7991faf83d44bbde70411ae250c47bf8af4b3
 
 HAYSTACK_CONNECTIONS = {
     'default': {
