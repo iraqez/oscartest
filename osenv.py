@@ -1,6 +1,7 @@
 import os
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ###
 osenv = os.environ.setdefault("DJANGO_SETTINGS_MODULE", "present-me.dev_settings")
 =======
@@ -11,3 +12,7 @@ osenv = os.environ.setdefault("DJANGO_SETTINGS_MODULE", "present-me.settings")
 #
 osenv = os.environ.setdefault("DJANGO_SETTINGS_MODULE", "present-me.dev_settings")
 >>>>>>> 9ec7991faf83d44bbde70411ae250c47bf8af4b3
+=======
+#
+osenv = os.environ.setdefault("DJANGO_SETTINGS_MODULE", "present-me.settings")
+>>>>>>> d6ec04109399b5f2542bf3f10e0e4f922ee5459e

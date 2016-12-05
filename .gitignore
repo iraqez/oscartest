@@ -16,9 +16,16 @@ __pycache__/
 !/apps/promotions/templates/
 myoscarfork/
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 !/templates/
 media/*
 static/*
 db.sqlite3
 >>>>>>> 9ec7991faf83d44bbde70411ae250c47bf8af4b3
+=======
+!/templates/
+media/*
+static/*
+db.sqlite3
+>>>>>>> d6ec04109399b5f2542bf3f10e0e4f922ee5459e
