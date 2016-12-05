@@ -18,3 +18,4 @@ myoscarfork/
 !/templates/
 media/*
 static/*
+db.sqlite3
