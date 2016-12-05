@@ -14,7 +14,11 @@ http://djbook.ru/examples/68/
 #платежные системы
 
 #доставка
+http://blog.djangofan.ru/2016/04/django-oscar.html
 
 #мультиязычность
 http://django-modeltranslation.readthedocs.io/en/latest/index.html
 https://habrahabr.ru/post/128273/
+
+#dashboard
+http://blog.djangofan.ru/2015/09/dashboard-django-oscar.html
