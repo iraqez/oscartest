@@ -16,4 +16,3 @@ class CategoryAdminI18n(TreeAdmin, TabbedTranslationAdmin):
 admin.site.register(CategoryNew, CategoryAdminI18n)
 from oscar.apps.catalogue.admin import *  # noqa
 
-#
