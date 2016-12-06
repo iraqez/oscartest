@@ -1,7 +1,7 @@
 from django.contrib import admin
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
-from modeltranslation.admin import TabbedTranslationAdmin
+from modeltranslation.admin import TabbedTranslationAdmin, TranslationAdmin
 #Category
 from .models import Category as CategoryNew
 from oscar.apps.catalogue.admin import Category as CategoryOld
@@ -12,6 +12,14 @@ from oscar.apps.catalogue.admin import ProductClass as ProductClassOld
 #Product
 from .models import Product as ProductNew
 from oscar.apps.catalogue.admin import Product as ProductOld
+
+
+#ProductAttribute & ProductAttributeValue
+from .models import ProductAttribute as ProductAttributeNew
+from oscar.apps.catalogue.admin import ProductAttribute as ProductAttributeOld
+
+from .models import ProductAttributeValue as ProductAttributeValueNew
+from oscar.apps.catalogue.admin import ProductAttributeValue as ProductAttributeValueOld
 #all_oscar
 from oscar.apps.catalogue.admin import ProductAttributeInline,\
     AttributeInline, CategoryInline, ProductRecommendationInline
@@ -20,6 +28,8 @@ import apps.catalogue.translation
 admin.site.unregister(CategoryOld)
 admin.site.unregister(ProductClassOld)
 admin.site.unregister(ProductOld)
+admin.site.unregister(ProductAttributeOld)
+admin.site.unregister(ProductAttributeValueOld)
 
 
 class ProductClassAdminI18n(TabbedTranslationAdmin):
@@ -50,6 +60,16 @@ class ProductAdminI18n(TabbedTranslationAdmin):
                 'attribute_values',
                 'attribute_values__attribute'))
 
+class ProductAttributeAdminI18n(TranslationAdmin):
+    list_display = ('name', 'code', 'product_class', 'type')
+    prepopulated_fields = {"code": ("name", )}
+
+class ProductAttributeValueAdminI18n(TranslationAdmin):
+    list_display = ('product', 'attribute', 'value')
+
+
+admin.site.register(ProductAttributeNew, ProductAttributeAdminI18n)
+admin.site.register(ProductAttributeValueNew, ProductAttributeValueAdminI18n)
 admin.site.register(ProductNew, ProductAdminI18n)
 admin.site.register(ProductClassNew, ProductClassAdminI18n)
 admin.site.register(CategoryNew, CategoryAdminI18n)

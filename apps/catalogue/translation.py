@@ -1,5 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import Category, ProductClass, Product
+from .models import Category, ProductClass, Product, ProductAttribute,\
+    ProductAttributeValue
 
 
 class CategoryTranslationOptions(TranslationOptions):
@@ -15,6 +16,14 @@ class ProductClassTranslationOptions(TranslationOptions):
 class ProductTranslationOptions(TranslationOptions):
     fields = ('title', 'description',)
 
+class ProductAttributeTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+class ProductAttributeValueTranslationOptions(TranslationOptions):
+    fields = ('value_text', 'value_richtext')
+
+translator.register(ProductAttributeValue, ProductAttributeValueTranslationOptions)
+translator.register(ProductAttribute, ProductAttributeTranslationOptions)
 translator.register(ProductClass, ProductClassTranslationOptions)
 translator.register(Category, CategoryTranslationOptions)
 translator.register(Product, ProductTranslationOptions)
