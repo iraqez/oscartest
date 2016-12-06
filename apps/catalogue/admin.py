@@ -1,55 +1,57 @@
 from django.contrib import admin
-<<<<<<< HEAD
-<<<<<<< HEAD
-from modeltranslation.admin import TranslationAdmin
-from .models import Category
-from oscar.apps.catalogue.admin import CategoryAdmin as CoreCategoryAdmin
-from oscar.apps.catalogue.admin import *  # noqa
-
-
-class CoreCategoryAdmin(TranslationAdmin):
-
-    class Media:
-        js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'tabbed_translation_fields.js',
-        )
-        css = {
-            'screen': ('tabbed_translation_fields.css',),
-        }
-=======
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
 from modeltranslation.admin import TabbedTranslationAdmin
+#Category
 from .models import Category as CategoryNew
-from oscar.apps.catalogue.admin import Category as CategoryOld  # noqa
+from oscar.apps.catalogue.admin import Category as CategoryOld
+#ProductClass
+from .models import ProductClass as ProductClassNew
+from oscar.apps.catalogue.admin import ProductClass as ProductClassOld
+
+#Product
+from .models import Product as ProductNew
+from oscar.apps.catalogue.admin import Product as ProductOld
+#all_oscar
+from oscar.apps.catalogue.admin import ProductAttributeInline,\
+    AttributeInline, CategoryInline, ProductRecommendationInline
 import apps.catalogue.translation
 
 admin.site.unregister(CategoryOld)
-#admin.site.register(CatNew)
-class CategoryAdminI18n(TreeAdmin, TabbedTranslationAdmin):
-    form = movenodeform_factory(CategoryOld)
-    list_display = ('name', 'name_ru', 'name_uk', 'slug')
-    list_filter = ('name_ru', 'name_uk')
->>>>>>> 9ec7991faf83d44bbde70411ae250c47bf8af4b3
+admin.site.unregister(ProductClassOld)
+admin.site.unregister(ProductOld)
 
-=======
-from treebeard.admin import TreeAdmin
-from treebeard.forms import movenodeform_factory
-from modeltranslation.admin import TabbedTranslationAdmin
-from .models import Category as CategoryNew
-from oscar.apps.catalogue.admin import Category as CategoryOld  # noqa
-import apps.catalogue.translation
 
-admin.site.unregister(CategoryOld)
-#admin.site.register(CatNew)
+class ProductClassAdminI18n(TabbedTranslationAdmin):
+    list_display = ('name', 'requires_shipping', 'track_stock')
+    inlines = [ProductAttributeInline]
+
 class CategoryAdminI18n(TreeAdmin, TabbedTranslationAdmin):
     form = movenodeform_factory(CategoryOld)
     list_display = ('name', 'name_ru', 'name_uk', 'slug')
     list_filter = ('name_ru', 'name_uk')
 
->>>>>>> d6ec04109399b5f2542bf3f10e0e4f922ee5459e
+class ProductAdminI18n(TabbedTranslationAdmin):
+    date_hierarchy = 'date_created'
+    list_display = ('get_title', 'upc', 'get_product_class', 'structure',
+                    'attribute_summary', 'date_created')
+    list_filter = ['structure', 'is_discountable']
+    raw_id_fields = ['parent']
+    inlines = [AttributeInline, CategoryInline, ProductRecommendationInline]
+    prepopulated_fields = {"slug": ("title",)}
+    search_fields = ['upc', 'title']
+
+    def get_queryset(self, request):
+        qs = super(ProductAdminI18n, self).get_queryset(request)
+        return (
+            qs
+            .select_related('product_class', 'parent')
+            .prefetch_related(
+                'attribute_values',
+                'attribute_values__attribute'))
+
+admin.site.register(ProductNew, ProductAdminI18n)
+admin.site.register(ProductClassNew, ProductClassAdminI18n)
 admin.site.register(CategoryNew, CategoryAdminI18n)
 from oscar.apps.catalogue.admin import *  # noqa
 
