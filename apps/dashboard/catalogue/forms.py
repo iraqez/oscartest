@@ -1,10 +1,13 @@
-from oscar.apps.dashboard.catalogue.forms import *  # noqa
-from apps.catalogue.models import Category
+from apps.catalogue.models import Category as CategoryN
+from oscar.core.loading import get_model
+from treebeard.forms import movenodeform_factory
 
-Category = get_model('catalogue', 'Category')
+CategoryN = get_model('catalogue', 'Category')
 
 CategoryForm = movenodeform_factory(
-    Category,
+    CategoryN,
     fields=[
         'name', 'description', 'image', 'metatag_keyworlds',
     ])
+
+from oscar.apps.dashboard.catalogue.forms import *  # noqa
