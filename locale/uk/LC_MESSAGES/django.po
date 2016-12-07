@@ -8975,4 +8975,4 @@ msgstr "Невірний місцевий або міжнародний форм
 #MY
 #apps/promotions/templates/promotions/my_homeview.html
 msgid "Cheers People !!!! The shop is open!"
-msgstr "Радість Люди !!!! Магазин відкрився!"
+msgstr "Радісна новина !!!! Магазин майже відкрився!"

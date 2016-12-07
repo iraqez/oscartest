@@ -8979,4 +8979,4 @@ msgstr ""
 #MY
 #apps/promotions/templates/promotions/my_homeview.html
 msgid "Cheers People !!!! The shop is open!"
-msgstr "Ура Люди !!!! Магазин открылся!"
+msgstr "Радостная новость !!!! Магазин почти открылся!"
