@@ -2,7 +2,7 @@ from django.contrib import admin
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
 from modeltranslation.admin import TabbedTranslationAdmin, TranslationAdmin, TranslationTabularInline, TranslationGenericTabularInline
-#Category
+##Category
 from .models import Category as CategoryNew
 from oscar.apps.catalogue.admin import Category as CategoryOld
 #ProductClass
