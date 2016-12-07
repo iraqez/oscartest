@@ -30,13 +30,13 @@ admin.site.unregister(ProductOld)
 admin.site.unregister(ProductAttributeOld)
 admin.site.unregister(ProductAttributeValueOld)
 
-#from .models import ProductAttributeValue
+
 class AttributeInline(TranslationTabularInline):
     model = ProductAttributeValueNew
 
 
 class ProductAttributeInline(TranslationTabularInline):
-    model = ProductAttributeValueNew
+    model = ProductAttributeNew
     extra = 2
 
 class ProductClassAdminI18n(TabbedTranslationAdmin):
