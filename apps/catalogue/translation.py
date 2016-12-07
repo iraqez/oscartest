@@ -1,7 +1,7 @@
 from modeltranslation.translator import translator, TranslationOptions
 from .models import Category, ProductClass, Product, ProductAttribute,\
     ProductAttributeValue, AttributeOption, AttributeOptionGroup
-
+#
 
 class CategoryTranslationOptions(TranslationOptions):
     """
