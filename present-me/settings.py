@@ -231,7 +231,7 @@ gettext_noop = lambda s: s
 LANGUAGES = (
     ('ru', gettext_noop('Russian')),
     ('uk', gettext_noop('Ukrainian')),
-    ('en', gettext_noop('English')),
+  #  ('en', gettext_noop('English')),
 
 )
 LANGUAGE_CODE = 'ru'
