@@ -1,6 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 from .models import Category, ProductClass, Product, ProductAttribute,\
-    ProductAttributeValue
+    ProductAttributeValue, AttributeOption, AttributeOptionGroup
 
 
 class CategoryTranslationOptions(TranslationOptions):
@@ -22,6 +22,15 @@ class ProductAttributeTranslationOptions(TranslationOptions):
 class ProductAttributeValueTranslationOptions(TranslationOptions):
     fields = ('value_text', 'value_richtext')
 
+class AttributeOptionTranslationOptions(TranslationOptions):
+    fields = ('option',)
+
+class AttributeOptionGroupTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+
+translator.register(AttributeOption, AttributeOptionTranslationOptions)
+translator.register(AttributeOptionGroup, AttributeOptionGroupTranslationOptions)
 translator.register(ProductAttributeValue, ProductAttributeValueTranslationOptions)
 translator.register(ProductAttribute, ProductAttributeTranslationOptions)
 translator.register(ProductClass, ProductClassTranslationOptions)

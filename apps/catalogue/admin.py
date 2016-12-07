@@ -14,6 +14,13 @@ from .models import Product as ProductNew
 from oscar.apps.catalogue.admin import Product as ProductOld
 
 
+#AttributeOptions
+from .models import AttributeOption as AttributeOptionNew
+from oscar.apps.catalogue.admin import AttributeOption as AttributeOptionOld
+
+from .models import AttributeOptionGroup as AttributeOptionGroupNew
+from oscar.apps.catalogue.admin import AttributeOptionGroup as AttributeOptionGroupOld
+
 #ProductAttribute & ProductAttributeValue
 from .models import ProductAttribute as ProductAttributeNew
 from oscar.apps.catalogue.admin import ProductAttribute as ProductAttributeOld
@@ -29,7 +36,7 @@ admin.site.unregister(ProductClassOld)
 admin.site.unregister(ProductOld)
 admin.site.unregister(ProductAttributeOld)
 admin.site.unregister(ProductAttributeValueOld)
-
+admin.site.unregister(AttributeOptionGroupOld)
 
 class AttributeInline(TranslationTabularInline):
     model = ProductAttributeValueNew
@@ -38,6 +45,13 @@ class AttributeInline(TranslationTabularInline):
 class ProductAttributeInline(TranslationTabularInline):
     model = ProductAttributeNew
     extra = 2
+
+class AttributeOptionInline(TranslationTabularInline):
+    model = AttributeOptionNew
+
+class AttributeOptionGroupAdminI18n(TabbedTranslationAdmin):
+    list_display = ('name', 'option_summary')
+    inlines = [AttributeOptionInline, ]
 
 class ProductClassAdminI18n(TabbedTranslationAdmin):
     list_display = ('name', 'requires_shipping', 'track_stock')
@@ -77,6 +91,7 @@ class ProductAttributeValueAdminI18n(TabbedTranslationAdmin):
     list_display = ('product', 'attribute', 'value')
 
 
+admin.site.register(AttributeOptionGroupNew, AttributeOptionGroupAdminI18n)
 admin.site.register(ProductAttributeNew, ProductAttributeAdminI18n)
 admin.site.register(ProductAttributeValueNew, ProductAttributeValueAdminI18n)
 admin.site.register(ProductNew, ProductAdminI18n)
