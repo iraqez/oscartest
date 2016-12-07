@@ -3,7 +3,7 @@ from oscar.apps.catalogue.abstract_models import AbstractCategory, AbstractProdu
     AbstractProduct, AbstractProductAttribute, AbstractProductAttributeValue
 from django.utils.translation import ugettext_lazy as _
 
-__all__ = ['ProductAttributesContainer']
+# __all__ = ['ProductAttributesContainer']
 
 
 
