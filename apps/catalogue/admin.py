@@ -20,7 +20,7 @@ from oscar.apps.catalogue.admin import ProductAttribute as ProductAttributeOld
 
 from .models import ProductAttributeValue as ProductAttributeValueNew
 from oscar.apps.catalogue.admin import ProductAttributeValue as ProductAttributeValueOld
-#all_oscar
+##all_oscar
 from oscar.apps.catalogue.admin import CategoryInline, ProductRecommendationInline
 import apps.catalogue.translation
 
