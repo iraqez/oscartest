@@ -8976,3 +8976,7 @@ msgstr ""
 msgid "This is not a valid local or international phone format."
 msgstr ""
 
+#MY
+#apps/promotions/templates/promotions/my_homeview.html
+msgid "Cheers People !!!! The shop is open!"
+msgstr "Ура Люди !!!! Магазин открылся!"

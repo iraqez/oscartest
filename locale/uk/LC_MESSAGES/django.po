@@ -8970,3 +8970,9 @@ msgstr "Невірний формат місцевого номеру телеф
 #: views/generic.py:207
 msgid "This is not a valid local or international phone format."
 msgstr "Невірний місцевий або міжнародний формат номеру телефону."
+
+
+#MY
+#apps/promotions/templates/promotions/my_homeview.html
+msgid "Cheers People !!!! The shop is open!"
+msgstr "Радість Люди !!!! Магазин відкрився!"
