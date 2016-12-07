@@ -1,7 +1,7 @@
 from django.contrib import admin
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
-from modeltranslation.admin import TabbedTranslationAdmin, TranslationAdmin
+from modeltranslation.admin import TabbedTranslationAdmin, TranslationAdmin, TranslationTabularInline, TranslationGenericTabularInline
 #Category
 from .models import Category as CategoryNew
 from oscar.apps.catalogue.admin import Category as CategoryOld
@@ -21,8 +21,7 @@ from oscar.apps.catalogue.admin import ProductAttribute as ProductAttributeOld
 from .models import ProductAttributeValue as ProductAttributeValueNew
 from oscar.apps.catalogue.admin import ProductAttributeValue as ProductAttributeValueOld
 #all_oscar
-from oscar.apps.catalogue.admin import ProductAttributeInline,\
-    AttributeInline, CategoryInline, ProductRecommendationInline
+from oscar.apps.catalogue.admin import CategoryInline, ProductRecommendationInline
 import apps.catalogue.translation
 
 admin.site.unregister(CategoryOld)
@@ -31,6 +30,14 @@ admin.site.unregister(ProductOld)
 admin.site.unregister(ProductAttributeOld)
 admin.site.unregister(ProductAttributeValueOld)
 
+#from .models import ProductAttributeValue
+class AttributeInline(TranslationTabularInline):
+    model = ProductAttributeValueNew
+
+
+class ProductAttributeInline(TranslationTabularInline):
+    model = ProductAttributeValueNew
+    extra = 2
 
 class ProductClassAdminI18n(TabbedTranslationAdmin):
     list_display = ('name', 'requires_shipping', 'track_stock')
@@ -40,6 +47,8 @@ class CategoryAdminI18n(TreeAdmin, TabbedTranslationAdmin):
     form = movenodeform_factory(CategoryOld)
     list_display = ('name', 'name_ru', 'name_uk', 'slug')
     list_filter = ('name_ru', 'name_uk')
+
+
 
 class ProductAdminI18n(TabbedTranslationAdmin):
     date_hierarchy = 'date_created'
@@ -60,11 +69,11 @@ class ProductAdminI18n(TabbedTranslationAdmin):
                 'attribute_values',
                 'attribute_values__attribute'))
 
-class ProductAttributeAdminI18n(TranslationAdmin):
+class ProductAttributeAdminI18n(TabbedTranslationAdmin):
     list_display = ('name', 'code', 'product_class', 'type')
     prepopulated_fields = {"code": ("name", )}
 
-class ProductAttributeValueAdminI18n(TranslationAdmin):
+class ProductAttributeValueAdminI18n(TabbedTranslationAdmin):
     list_display = ('product', 'attribute', 'value')
 
 
