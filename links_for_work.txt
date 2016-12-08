@@ -1,3 +1,6 @@
+#all
+https://gitlab.com/rosarior/awesome-django
+
 #install on server
 http://ivansimeyko.com/article/4/ #необходимо разобратся, про путь uwsgi
 
