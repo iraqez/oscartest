@@ -22,7 +22,7 @@ from oscar import OSCAR_MAIN_TEMPLATE_DIR
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = BASE_DIR
 
-PROJECT_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '.'))
+PROJECT_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '../../'))
 
 TEMPLATE_DEBUG = True
 
@@ -108,7 +108,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, '../../templates'),
             OSCAR_MAIN_TEMPLATE_DIR
         ],
         'APP_DIRS': True,
@@ -160,6 +160,7 @@ DATABASES = {
 #-----------------VK-----------------------
 SOCIAL_AUTH_VK_OAUTH2_KEY = '5758321'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = '1fTKh7Gmifg6ou3ZYPCx'
+#-----------------------------------------------------------
 SOCIAL_AUTH_LOGIN_URL = 'accounts/profile/'  # тут ваш url для калбека
 #SOCIAL_AUTH_USER_MODEL = 'User'  # ваша кастомная модель пользователя
 SOCIAL_AUTH_UID_LENGTH = 223
@@ -223,7 +224,7 @@ USE_TZ = True
 Если указать несколько языков, то список будет содержать только их.
 """
 LOCALE_PATHS = [
-     os.path.join(PROJECT_ROOT, '../locale'),
+     os.path.join(PROJECT_ROOT, '../present-me/locale'),
 ]
 
 gettext_noop = lambda s: s
@@ -259,11 +260,11 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static',),
+    os.path.join(PROJECT_ROOT, 'present-me/static', ),
 ]
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../media')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '../static')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../present-me/media')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, '../present-me/static')
 
 SERVER_EMAIL = 'admin@example.com'
 #Настройки магазина

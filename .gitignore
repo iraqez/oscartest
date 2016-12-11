@@ -6,13 +6,13 @@ main/migrations
 myoscarfork/__pycache__/
 present-me/__pycache__/
 apps/promotions/migrations
-present-me/local_settings.py
+present-me/settings/local_settings.py
 media/cache/
 media/images/
 apps/promotions/__pycache__/
 templates/
 __pycache__/
-!/present-me/dev_settings.py
+!/present-me/settings/dev_settings.py
 !/apps/promotions/templates/
 myoscarfork/
 !/templates/
