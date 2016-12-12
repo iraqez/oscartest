@@ -69,6 +69,9 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
     #model-translation
     'modeltranslation',
+    #rest api
+    'rest_framework',
+    'oscarapi',
 
     'main',
 ] + get_core_apps([
@@ -235,9 +238,9 @@ LANGUAGES = (
   #  ('en', gettext_noop('English')),
 
 )
-LANGUAGE_CODE = 'ru'
-MODELTRANSLATION_LANGUAGES = ('ru', 'uk')
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+LANGUAGE_CODE = 'uk'
+MODELTRANSLATION_LANGUAGES = ('uk', 'ru')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uk'
 
 HAYSTACK_CONNECTIONS = {
     'default': {

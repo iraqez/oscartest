@@ -9,7 +9,7 @@ DATABASES = {
 }
 
 LANGUAGES = (
-    ('ru', gettext_noop('Russian')),
     ('uk', gettext_noop('Ukrainian')),
-    ('en', gettext_noop('English')),
+    ('ru', gettext_noop('Russian')),
+ #   ('en', gettext_noop('English')),
 )
