@@ -25,3 +25,6 @@ https://habrahabr.ru/post/128273/
 
 #dashboard
 http://blog.djangofan.ru/2015/09/dashboard-django-oscar.html
+
+#api
+http://dunmaksim.blogspot.com/2015/05/drf-1-api.html

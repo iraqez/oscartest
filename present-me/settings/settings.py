@@ -154,6 +154,8 @@ DATABASES = {
     }
 }
 
+
+AUTH_USER_MODEL = 'auth.User'
 #AUTH_USER_MODEL = "user.User"
 """
 Авторизация через социальные сети с помощью модуля python-social-auth
