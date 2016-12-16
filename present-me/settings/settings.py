@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'oscarapi',
 
+
     'main',
 ] + get_core_apps([
     'apps.promotions',
@@ -98,10 +99,12 @@ MIDDLEWARE_CLASSES = [
     'oscar.apps.basket.middleware.BasketMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
+
+
 AUTHENTICATION_BACKENDS = (
     'social.backends.vk.VKOAuth2',  # тут можете перечислять нужные бекенды
     #  бекенды и настройки к ним лежат на https://python-social-auth.readthedocs.org/en/latest/backends/index.html
-    'oscar.apps.customer.auth_backends.EmailBackend',
+#    'oscar.apps.customer.auth_backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -166,8 +169,8 @@ AUTH_USER_MODEL = 'auth.User'
 SOCIAL_AUTH_VK_OAUTH2_KEY = '5758321'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = '1fTKh7Gmifg6ou3ZYPCx'
 #-----------------------------------------------------------
-SOCIAL_AUTH_LOGIN_URL = 'accounts/profile/'  # тут ваш url для калбека
-#SOCIAL_AUTH_USER_MODEL = 'User'  # ваша кастомная модель пользователя
+SOCIAL_AUTH_LOGIN_URL = 'accounts/profile/'  # тут url для калбека
+#SOCIAL_AUTH_USER_MODEL = 'User'  #кастомная модель пользователя
 SOCIAL_AUTH_UID_LENGTH = 223
 SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
 SOCIAL_AUTH_STORAGE = 'social.apps.django_app.default.models.DjangoStorage'

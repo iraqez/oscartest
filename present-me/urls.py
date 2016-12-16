@@ -21,7 +21,7 @@ from oscarapi.app import application as api
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(api.urls)),
+    url(r'^api_test/', include(api.urls)),
     url(r'', include(application.urls)),
 
     # Social auth
