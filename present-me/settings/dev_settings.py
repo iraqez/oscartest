@@ -6,7 +6,13 @@ DATABASES = {
     'NAME': 'dev-present-me',
     'USER': 'postgres',
     'PASSWORD': 'workfree',
-    'HOST': 'localhost', # Set to empty string for localhost.
+    'HOST': 'db', # Set to empty string for localhost.
     'PORT': '5432', # Set to empty string for default.
     }
 }
+
+LANGUAGES = (
+    ('uk', gettext_noop('Ukrainian')),
+    ('ru', gettext_noop('Russian')),
+ #   ('en', gettext_noop('English')),
+)
