@@ -1,0 +1,6 @@
+erppeek>=1.4.5
+django-modeltranslation>=0.6.1
+django-localeurl>=1.5
+django-flatpages-i18n>=0.1.2
+proteus==2.8.0
+django-tastypie==0.9.16

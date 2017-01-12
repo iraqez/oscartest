@@ -38,3 +38,5 @@ social-auth-core==0.0.1
 sorl-thumbnail==12.4a1
 Unidecode==0.4.19
 vk-api==8.0
+django-redis<=4.3.0
+redis<=2.10.3
