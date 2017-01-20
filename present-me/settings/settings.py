@@ -77,7 +77,7 @@ INSTALLED_APPS = [
     'main',
 ] + get_core_apps([
     'apps.promotions',
-    'apps.shipping',
+  #  'apps.shipping',
     'apps.user',
     'apps.dashboard.catalogue',
     'apps.catalogue'
