@@ -2,7 +2,7 @@ import csv
 import re
 from decimal import Decimal
 
-from oscar.apps.catalogue.models import Product, Category, ProductAttribute,\
+from apps.catalogue.models import Product, Category, ProductAttribute,\
                                         ProductClass, ProductCategory,\
                                         ProductAttributeValue
 from oscar.apps.partner.models import Partner, StockRecord
@@ -23,7 +23,7 @@ BEBOR5.5,Borlotti Beans 5kg,Bulk,1,$24.3,,N,,Australia,
 
 """
 
-partner = Partner.objects.filter(name='HTG')
+partner = Partner.objects.filter(name='Импортированный поставщик')
 if partner.exists():
     partner = partner[0]
 else:
