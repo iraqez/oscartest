@@ -3,7 +3,7 @@ from pprint import pprint
 
 
 
-with open('goods_residues.json') as data_file:
+with open('importProduct/goods_residues.json') as data_file:
     data = json.load(data_file)
 
 # f = open("test.txt", 'w')

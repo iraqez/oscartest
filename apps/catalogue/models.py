@@ -15,7 +15,6 @@ class ProductClass(AbstractProductClass):
 class Category(AbstractCategory):
     metatag_keyworlds = models.CharField(verbose_name=_('Keyword'), max_length=255, null=True)
 
-
 class Product(AbstractProduct):
     metatag_keyworlds = models.CharField(verbose_name=_('Keyword'), max_length=255, null=True)
 
