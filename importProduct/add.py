@@ -42,4 +42,3 @@ def category_parent(cat):
                 continue
             else:
                 parentID(i)
-
