@@ -15,16 +15,17 @@ categories = data['categories']
 products = data['goods']
 
 def category_parent(cat):
-    next(item for item in categories if item["parent_id"] == "2")
+    #next(item for item in categories if item["parent_id"] == "2")
     for i in cat:
-        while i['parent_id'] == '2':
+        if i['parent_id'] == '2':
             if Category.objects.filter(id=i['id']).exists():
-                continue
+                pass
             else:
                 Category.add_root(name=i['name'], id=i['id'])
-            continue
+                pass
         else:
             if Category.objects.filter(id=i['id']).exists():
-                continue
-            else:
                 pass
+            else:
+                x = next(item for item in categories if item["id"] == i['parent_id'])
+                print(x)
